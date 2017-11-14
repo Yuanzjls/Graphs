@@ -193,38 +193,40 @@ public class DepthFirstOrder {
     /**
      * Unit tests the <tt>DepthFirstOrder</tt> data type.
      */
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         //In in = new In(args[0]);
-    	In in = new In("mediumDG.txt");
+    	In in = new In("largeDG.txt");
         Digraph G = new Digraph(in);
 
         DepthFirstOrder dfs = new DepthFirstOrder(G);
         StdOut.println("   v  pre post");
         StdOut.println("--------------");
-        for (int v = 0; v < G.V(); v++) {
+        for (int v = 0; v < G.V(); v++) 
+        {
             StdOut.printf("%4d %4d %4d\n", v, dfs.pre(v), dfs.post(v));
         }
 
         StdOut.print("Preorder:  ");
-        for (int v : dfs.pre()) {
+        for (int v : dfs.pre())
+        {
             StdOut.print(v + " ");
         }
         StdOut.println();
 
         StdOut.print("Postorder: ");
-        for (int v : dfs.post()) {
+        for (int v : dfs.post())
+        {
             StdOut.print(v + " ");
         }
         StdOut.println();
 
         StdOut.print("Reverse postorder: ");
-        for (int v : dfs.reversePost()) {
+        for (int v : dfs.reversePost())
+        {
             StdOut.print(v + " ");
         }
         StdOut.println();
-
-
     }
-
 }
 

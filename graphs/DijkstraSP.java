@@ -194,30 +194,29 @@ public class DijkstraSP {
         //In in = new In(args[0]);
         In in = new In("largeEWG.txt");
         EdgeWeightedDigraph G = new EdgeWeightedDigraph(in);
-        //int s = Integer.parseInt(args[1]);
-        int s = 999812;
-
         
-        long time_start = System.nanoTime();
-        // compute shortest paths
-        DijkstraSP sp = new DijkstraSP(G, s);
-        System.out.println("The time for DP is " + (System.nanoTime() - time_start));
-
-        // print shortest path
-        for (int t = 0; t < G.V(); t++) {
-            if (sp.hasPathTo(t)) {
-                StdOut.printf("%d to %d (%.2f)  ", s, t, sp.distTo(t));
-                if (sp.hasPathTo(t)) {
-                    for (DirectedEdge e : sp.pathTo(t)) {
-                        StdOut.print(e + "   ");
-                    }
-                }
-                StdOut.println();
-            }
-            else {
-                StdOut.printf("%d to %d         no path\n", s, t);
-            }
+        
+        for (int i=0; i<1000000; i++)
+        {
+        	long time_start = System.nanoTime();
+        	DijkstraSP sp = new DijkstraSP(G, i);
+        	System.out.println("The time for DP " + i + " is " + (System.nanoTime() - time_start));
         }
+        // print shortest path
+//        for (int t = 0; t < G.V(); t++) {
+//            if (sp.hasPathTo(t)) {
+//                StdOut.printf("%d to %d (%.2f)  ", s, t, sp.distTo(t));
+//                if (sp.hasPathTo(t)) {
+//                    for (DirectedEdge e : sp.pathTo(t)) {
+//                        StdOut.print(e + "   ");
+//                    }
+//                }
+//                StdOut.println();
+//            }
+//            else {
+//                StdOut.printf("%d to %d         no path\n", s, t);
+//            }
+//        }
     }
 
 }

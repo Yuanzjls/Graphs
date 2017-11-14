@@ -1,4 +1,4 @@
-package graphs;
+ package graphs;
 
 /*************************************************************************
  * Compilation:   javac KruskalMST.java
